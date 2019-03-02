@@ -1,0 +1,46 @@
+<div class="example-container mat-elevation-z8">
+  <mat-table #table [dataSource]="dataSource">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Permalink Column -->
+    <ng-container matColumnDef="permaLink">
+      <mat-header-cell *matHeaderCellDef> Permanent Link </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.permaLink}} </mat-cell>
+    </ng-container>
+
+    <!-- geoRestrictions Column -->
+    <ng-container matColumnDef="geoRestrictions">
+      <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.geoRestrictions}} </mat-cell>
+    </ng-container>
+
+    <!-- Title Column -->
+    <ng-container matColumnDef="title">
+      <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.title}} </mat-cell>
+    </ng-container>
+
+    <!-- Tags Column -->
+    <ng-container matColumnDef="tags">
+      <mat-header-cell *matHeaderCellDef> Tags </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.tags}} </mat-cell>
+    </ng-container>
+
+    <!-- parentalRating Column -->
+    <ng-container matColumnDef="parentalRating">
+      <mat-header-cell *matHeaderCellDef> Parental Rating </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.parentalRating}} </mat-cell>
+    </ng-container>
+
+    <!-- fbCommentsUrl Column -->
+    <ng-container matColumnDef="fbCommentsUrl">
+      <mat-header-cell *matHeaderCellDef>  FB Comments Url </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.fbCommentsUrl}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
